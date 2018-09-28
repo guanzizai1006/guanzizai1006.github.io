@@ -100,3 +100,4 @@ $("figure").hover(
 $(document).ready(function() {
   createCopyBtns();
 });
+
