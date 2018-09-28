@@ -314,162 +314,24 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
     
-
-  <article class="post post-type-normal post-sticky" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liwenxue.top/2018/09/01/ubuntu16.04安装opencv2.4.13.6byBruce/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bruce Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bruce">
-    </span>
-
     
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Ubuntu16.04安装opencv2.4.13.6及配置环境</h1>
-        
+	<h1 class="post-title" itemprop="name headline">Ubuntu16.04安装opencv2.4.13.6及配置环境</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T00:00:01+08:00">
-                2018-09-01
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/01/ubuntu16.04安装opencv2.4.13.6byBruce/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/01/ubuntu16.04安装opencv2.4.13.6byBruce/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/09/01/ubuntu16.04安装opencv2.4.13.6byBruce/" class="leancloud_visitors" data-flag-title="Ubuntu16.04安装opencv2.4.13.6及配置环境">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  1.3k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <h1 id="Ubuntu16-04安装opencv2-4-13-6及配置环境"><a href="#Ubuntu16-04安装opencv2-4-13-6及配置环境" class="headerlink" title="Ubuntu16.04安装opencv2.4.13.6及配置环境"></a>Ubuntu16.04安装opencv2.4.13.6及配置环境</h1><h2 id="1-准备阶段"><a href="#1-准备阶段" class="headerlink" title="1.准备阶段"></a>1.准备阶段</h2><p>官网下载源码包，存到Linux下的“下载”，并解压。<br>bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip</p>
+      <div class="post-body">
+        
+        
+          <h1 id="Ubuntu16-04安装opencv2-4-13-6及配置环境"><a href="#Ubuntu16-04安装opencv2-4-13-6及配置环境" class="headerlink" title="Ubuntu16.04安装opencv2.4.13.6及配置环境"></a>Ubuntu16.04安装opencv2.4.13.6及配置环境</h1><h2 id="1-准备阶段"><a href="#1-准备阶段" class="headerlink" title="1.准备阶段"></a>1.准备阶段</h2><p>官网下载源码包，存到Linux下的“下载”，并解压。<br>bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip</p>
 <h2 id="2-（第一步）安装编译工具。"><a href="#2-（第一步）安装编译工具。" class="headerlink" title="2.    （第一步）安装编译工具。"></a>2.    （第一步）安装编译工具。</h2><p>bruce@bruce-virtual-machine:~$ sudo apt-get install build-essential<br>则会显示以下内容<br>正在读取软件包列表… 完成<br>正在分析软件包的依赖关系树<br>正在读取状态信息… 完成<br>build-essential 已经是最新版 (12.1ubuntu2)。<br>升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 198 个软件包未被升级。</p>
 <h2 id="3-（第二步）安装依赖包，主要参考了如下2个文档，都包含了必备的包。"><a href="#3-（第二步）安装依赖包，主要参考了如下2个文档，都包含了必备的包。" class="headerlink" title="3.    （第二步）安装依赖包，主要参考了如下2个文档，都包含了必备的包。"></a>3.    （第二步）安装依赖包，主要参考了如下2个文档，都包含了必备的包。</h2><p>###（1）    <a href="https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）" target="_blank" rel="noopener">https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）</a></p>
 <p>下面依赖关系主要是为了能够支持读写图片以及视频sudo apt-get install  libgtk2.0-dev libavcodec-dev libavformat-dev  libtiff4-dev（独有，提示已经被废弃，bruce并未安装。在使用pyth Ubuntu下叫做python-dev，CentOS下叫做python-devel，标记一下。）  libswscale-dev libjasper-dev<br>安装cmake，请输入命令 sudo apt-get install cmake<br>安装pkg-config。请输入命令： sudo apt-get install pkg-config  它是一个提供从源代码中编译软件时查询已安装的库时使用的统一接口的计算机软件。Ps.下图是查询Linux是否安装了某个包的方法</p>
@@ -507,97 +369,15 @@
 </ul>
 <p>– </p>
 <h3 id="嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！"><a href="#嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！" class="headerlink" title="嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！"></a>嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！</h3>
-      
-    </div>
-	
-	<div>
-	  
-	    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>欢迎交流-------------</div>
-    
-</div>
-
-	  
-	</div>
-	
-    
-    
-    
-
-    
-
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:</strong>
-    Bruce Lee
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link:</strong>
-    <a href="https://liwenxue.top/2018/09/01/ubuntu16.04安装opencv2.4.13.6byBruce/" title="Ubuntu16.04安装opencv2.4.13.6及配置环境">https://liwenxue.top/2018/09/01/ubuntu16.04安装opencv2.4.13.6byBruce/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice: </strong>
-    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
-  </li>
-</ul>
-
+        
       </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/linux/" rel="tag"># linux</a>
-          
-        </div>
-      
-
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/06/23/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/01/one/" rel="prev" title="Hello World1">
-                Hello World1 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
       
     </div>
+    
+    
+    
   </div>
 
 
