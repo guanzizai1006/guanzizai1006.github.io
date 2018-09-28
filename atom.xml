@@ -77,6 +77,31 @@ $ git push -u origin master   //将本地项目更新到github项目上去
   </entry>
   
   <entry>
+    <title>linux命令总结</title>
+    <link href="https://liwenxue.top/2018/09/01/linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
+    <id>https://liwenxue.top/2018/09/01/linux命令总结/</id>
+    <published>2018-08-31T16:00:01.000Z</published>
+    <updated>2018-09-28T05:01:22.841Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="源目录：-三、Linux相关-gt-linux命令总结"><a href="#源目录：-三、Linux相关-gt-linux命令总结" class="headerlink" title="源目录： 三、Linux相关-&gt;linux命令总结"></a>源目录： 三、Linux相关-&gt;linux命令总结</h1><h2 id="1-linux-下删除文件夹的命令。"><a href="#1-linux-下删除文件夹的命令。" class="headerlink" title="1. linux 下删除文件夹的命令。"></a>1. linux 下删除文件夹的命令。</h2><pre><code>使用rm -rf 目录名字 命令即可【    -r 就是向下递归，不管有多少级目录，一并删除    -f 就是直接强行删除，不作任何提示的意思】 eg. 删除文件夹实例：rm -rf /var/log/httpd/access将会删除/var/log/httpd/access目录以及其下所有文件、文件夹删除文件使用实例：rm -f /var/log/httpd/access.log将会强制删除/var/log/httpd/access.log这个文件</code></pre><p>源文档 <a href="https://www.cnblogs.com/winifred-tang94/p/5863722.html" target="_blank" rel="noopener">https://www.cnblogs.com/winifred-tang94/p/5863722.html</a> </p><p>另外一个链接如下： <a href="https://blog.csdn.net/coldplayplay/article/details/78649731" target="_blank" rel="noopener">https://blog.csdn.net/coldplayplay/article/details/78649731</a></p><h2 id="2-命令。"><a href="#2-命令。" class="headerlink" title="2. 命令。"></a>2. 命令。</h2><pre> whereis pip   #能够查找所有相关的pip东西。 pip list           #能够列出所有用pip安装好的内容。</pre><h2 id="3-通过pip给python3安装-某包"><a href="#3-通过pip给python3安装-某包" class="headerlink" title="3. 通过pip给python3安装 某包"></a>3. 通过pip给python3安装 某包</h2><p><img src="http://pf6sbcbe5.bkt.clouddn.com/6.png" alt=""></p><blockquote><p>三种引号都表示字符串</p><ol start="3"><li>单引号表示的字符串里可包含双引号，当然不能包含单引号</li><li>双引号表示的字符串里可以包含单引号，字符串都只能有一行</li><li>三个引号能包含多行字符串，同时常常出现在函数的声明的下一行，来注释函数的功能，与众不同的地方在于，这个注释作为函数的一个默认属性，可以通过 函数名.<strong>doc</strong> 来访问</li></ol></blockquote><p>源文档 <a href="https://zhidao.baidu.com/question/1303536101501491899.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/1303536101501491899.html</a> </p><pre>终端界面， Ctrl+ 符号 -   则缩小界面终端界面， Ctrl+Shift + 符号+   则放大界面。Ctrl+l          清屏Ctrl+c          终止当前程序Ctrl+z          将当前程序移到后台执行，如同输入的命令后面加&Ctrl+r          查询最近执行过的命令Ctrl+a          光标移到当前行首Ctrl+e          光标移到当前行尾Ctrl+k          删除从光标开始到结尾的所有字符Ctrl+Shift+t    打开一个新的终端窗口</pre><p>源文档 <a href="http://www.bjhee.com/linux-terminal.html" target="_blank" rel="noopener">http://www.bjhee.com/linux-terminal.html</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;源目录：-三、Linux相关-gt-linux命令总结&quot;&gt;&lt;a href=&quot;#源目录：-三、Linux相关-gt-linux命令总结&quot; class=&quot;headerlink&quot; title=&quot;源目录： 三、Linux相关-&amp;gt;linux命令总结&quot;&gt;&lt;/a&gt;源目录：
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://liwenxue.top/categories/Linux/"/>
+    
+    
+      <category term="linux" scheme="https://liwenxue.top/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="https://liwenxue.top/2018/09/01/hello-world/"/>
     <id>https://liwenxue.top/2018/09/01/hello-world/</id>
@@ -130,31 +155,6 @@ $ git push -u origin master   //将本地项目更新到github项目上去
       <category term="node.js" scheme="https://liwenxue.top/tags/node-js/"/>
     
       <category term="express" scheme="https://liwenxue.top/tags/express/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux命令总结</title>
-    <link href="https://liwenxue.top/2018/09/01/linux%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
-    <id>https://liwenxue.top/2018/09/01/linux命令总结/</id>
-    <published>2018-08-31T16:00:01.000Z</published>
-    <updated>2018-09-28T05:01:22.841Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="源目录：-三、Linux相关-gt-linux命令总结"><a href="#源目录：-三、Linux相关-gt-linux命令总结" class="headerlink" title="源目录： 三、Linux相关-&gt;linux命令总结"></a>源目录： 三、Linux相关-&gt;linux命令总结</h1><h2 id="1-linux-下删除文件夹的命令。"><a href="#1-linux-下删除文件夹的命令。" class="headerlink" title="1. linux 下删除文件夹的命令。"></a>1. linux 下删除文件夹的命令。</h2><pre><code>使用rm -rf 目录名字 命令即可【    -r 就是向下递归，不管有多少级目录，一并删除    -f 就是直接强行删除，不作任何提示的意思】 eg. 删除文件夹实例：rm -rf /var/log/httpd/access将会删除/var/log/httpd/access目录以及其下所有文件、文件夹删除文件使用实例：rm -f /var/log/httpd/access.log将会强制删除/var/log/httpd/access.log这个文件</code></pre><p>源文档 <a href="https://www.cnblogs.com/winifred-tang94/p/5863722.html" target="_blank" rel="noopener">https://www.cnblogs.com/winifred-tang94/p/5863722.html</a> </p><p>另外一个链接如下： <a href="https://blog.csdn.net/coldplayplay/article/details/78649731" target="_blank" rel="noopener">https://blog.csdn.net/coldplayplay/article/details/78649731</a></p><h2 id="2-命令。"><a href="#2-命令。" class="headerlink" title="2. 命令。"></a>2. 命令。</h2><pre> whereis pip   #能够查找所有相关的pip东西。 pip list           #能够列出所有用pip安装好的内容。</pre><h2 id="3-通过pip给python3安装-某包"><a href="#3-通过pip给python3安装-某包" class="headerlink" title="3. 通过pip给python3安装 某包"></a>3. 通过pip给python3安装 某包</h2><p><img src="http://pf6sbcbe5.bkt.clouddn.com/6.png" alt=""></p><blockquote><p>三种引号都表示字符串</p><ol start="3"><li>单引号表示的字符串里可包含双引号，当然不能包含单引号</li><li>双引号表示的字符串里可以包含单引号，字符串都只能有一行</li><li>三个引号能包含多行字符串，同时常常出现在函数的声明的下一行，来注释函数的功能，与众不同的地方在于，这个注释作为函数的一个默认属性，可以通过 函数名.<strong>doc</strong> 来访问</li></ol></blockquote><p>源文档 <a href="https://zhidao.baidu.com/question/1303536101501491899.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/1303536101501491899.html</a> </p><pre>终端界面， Ctrl+ 符号 -   则缩小界面终端界面， Ctrl+Shift + 符号+   则放大界面。Ctrl+l          清屏Ctrl+c          终止当前程序Ctrl+z          将当前程序移到后台执行，如同输入的命令后面加&Ctrl+r          查询最近执行过的命令Ctrl+a          光标移到当前行首Ctrl+e          光标移到当前行尾Ctrl+k          删除从光标开始到结尾的所有字符Ctrl+Shift+t    打开一个新的终端窗口</pre><p>源文档 <a href="http://www.bjhee.com/linux-terminal.html" target="_blank" rel="noopener">http://www.bjhee.com/linux-terminal.html</a> </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;源目录：-三、Linux相关-gt-linux命令总结&quot;&gt;&lt;a href=&quot;#源目录：-三、Linux相关-gt-linux命令总结&quot; class=&quot;headerlink&quot; title=&quot;源目录： 三、Linux相关-&amp;gt;linux命令总结&quot;&gt;&lt;/a&gt;源目录：
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="https://liwenxue.top/categories/Linux/"/>
-    
-    
-      <category term="linux" scheme="https://liwenxue.top/tags/linux/"/>
     
   </entry>
   
