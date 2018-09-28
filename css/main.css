@@ -1826,7 +1826,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #69673c;
+  background: #169669;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2868,7 +2868,7 @@ pre .javascript .function {
 }
 .sidebar-inner.affix {
   position: fixed;
-  top: 50px;
+  top: 500px;
 }
 .sidebar-inner.affix-bottom {
   position: absolute;
