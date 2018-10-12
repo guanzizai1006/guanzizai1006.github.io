@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://liwenxue.top/"/>
-  <updated>2018-10-12T08:33:04.316Z</updated>
+  <updated>2018-10-12T08:35:41.327Z</updated>
   <id>https://liwenxue.top/</id>
   
   <author>
@@ -17,25 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>face2ai社区成立啦！</title>
     <link href="https://liwenxue.top/face2%E7%A4%BE%E5%8C%BA%E6%88%90%E7%AB%8B%E5%95%A6/"/>
     <id>https://liwenxue.top/face2社区成立啦/</id>
-    <published>2018-10-12T08:03:27.195Z</published>
-    <updated>2018-10-12T08:33:04.316Z</updated>
+    <published>2018-08-31T16:00:01.000Z</published>
+    <updated>2018-10-12T08:35:41.327Z</updated>
     
-    <content type="html"><![CDATA[<p>title: face2ai社区成立啦！<br>date: 2018-09-01 00:00:01<br>categories: 人工智能<br>tags: [face2ai, 人工智能]</p><blockquote><p>图像处理方向，潜心研究吧！<br>1<br>2<br>3<br>4<br>5</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>图像处理方向，潜心研究吧！<br>1<br>2<br>3<br>4<br>5</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;title: face2ai社区成立啦！&lt;br&gt;date: 2018-09-01 00:00:01&lt;br&gt;categories: 人工智能&lt;br&gt;tags: [face2ai, 人工智能]&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;图像处理方向，潜心研究吧！&lt;br&gt;1&lt;br&gt;
+        &lt;blockquote&gt;
+&lt;p&gt;图像处理方向，潜心研究吧！&lt;br&gt;1&lt;br&gt;2&lt;br&gt;3&lt;br&gt;4&lt;br&gt;5&lt;/p&gt;
+&lt;/blockquote&gt;
+
       
     
     </summary>
     
+      <category term="人工智能" scheme="https://liwenxue.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+      <category term="face2ai" scheme="https://liwenxue.top/tags/face2ai/"/>
+    
+      <category term="人工智能" scheme="https://liwenxue.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
   </entry>
   

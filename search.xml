@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[face2ai社区成立啦！]]></title>
     <url>%2Fface2%E7%A4%BE%E5%8C%BA%E6%88%90%E7%AB%8B%E5%95%A6%2F</url>
-    <content type="text"><![CDATA[title: face2ai社区成立啦！date: 2018-09-01 00:00:01categories: 人工智能tags: [face2ai, 人工智能] 图像处理方向，潜心研究吧！12345]]></content>
+    <content type="text"><![CDATA[图像处理方向，潜心研究吧！12345]]></content>
+      <categories>
+        <category>人工智能</category>
+      </categories>
+      <tags>
+        <tag>face2ai</tag>
+        <tag>人工智能</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Git 和 GitHub 的使用方法汇总]]></title>
