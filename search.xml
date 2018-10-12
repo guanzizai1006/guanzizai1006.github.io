@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Ubuntu16.04安装opencv2.4.13.6及配置环境]]></title>
-    <url>%2Fubuntu16.04%E5%AE%89%E8%A3%85opencv2.4.13.6byBruce%2F</url>
-    <content type="text"><![CDATA[Ubuntu16.04安装opencv2.4.13.6及配置环境1.准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip 2. （第一步）安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install build-essential则会显示以下内容正在读取软件包列表… 完成正在分析软件包的依赖关系树正在读取状态信息… 完成build-essential 已经是最新版 (12.1ubuntu2)。升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 198 个软件包未被升级。 3. （第二步）安装依赖包，主要参考了如下2个文档，都包含了必备的包。###（1） https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包） 下面依赖关系主要是为了能够支持读写图片以及视频sudo apt-get install libgtk2.0-dev libavcodec-dev libavformat-dev libtiff4-dev（独有，提示已经被废弃，bruce并未安装。在使用pyth Ubuntu下叫做python-dev，CentOS下叫做python-devel，标记一下。） libswscale-dev libjasper-dev安装cmake，请输入命令 sudo apt-get install cmake安装pkg-config。请输入命令： sudo apt-get install pkg-config 它是一个提供从源代码中编译软件时查询已安装的库时使用的统一接口的计算机软件。Ps.下图是查询Linux是否安装了某个包的方法 ###（2） https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral （较多安装包）安装依赖包sudo apt-get install cmake git libgtk2.0-dev（失败，难道16.04要换成3.0而不是2.0？） pkg-config libavcodec-dev libavformat-dev libswscale-dev安装可选包sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev 4. 源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！ a. 首先进入当前解压的源码包opencv所在目录opencv2.4.13.6 。使用的是cd命令或者是鼠标直接点击文件夹。 b. 创建一个新的文件夹。输入指令： mkdir release c. 进入该release文件夹。输入指令：cd release d. 编译。输入命令：（最后在local接着的是两个点，不要忘了，最后直接复制粘贴进命令行）会比较耗时，比如会花费20分钟来编译，会有进度显示哒。cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .. e. 开启线程(按照自己的配置,处理器核数*2)。输入命令： make -j4 f. sudo make install （这一步也很快）5. opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！ a. 在文件/etc/ld.so.conf中添加 /usr/local/lib (这里就是上文中您的安装目录下的) b. 当我们打开、/etc/ld.so.conf文件时，发现它的属性为只读，则终端上输入以下命令： sudo chmod 666 /etc/ld.so.conf 改变文件属性为允许所有用户对该文件进行读写操作然后另起一行输入/usr/local/lib了。 c. 完成动态库的共享。请输入 sudo ldconfig –v6. 接下来，配置opencv的头文件位置！ a. 输入命令： sudo gedit /etc/bash.bashrc 进入编辑页面。 b. 在编辑命令输入以下内容：PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig 并保存下来。 c. 终端输入命令：export PKG_CONFIG_PATH d. 使配置生效。终端输入命令:sudo source /etc/bash.bashrc 的 e. 由于source为root命令，需要root权限。输入命令：su bruce（bruce为我本人的用户名，请换成您自己的）然后按提示进行。 f． 再次使配置生效。终端输入命令： source /etc/bash.bashrc g．退出。终端输入命令：quit()或者直接键盘按住 Ctrl+D 这两个按键。 h. 更新database。终端输入命令： sudo updatedb 7. 选择一个demo进行测试。完工啦！！！哈哈，最后就可以来测试我们是否搞定这个opencv的配置啦 a. 在解压的opencv目录下找到 samples/c/文件夹。在该文件夹下输入终端指令： ./build_all.sh (这一步将会花费大概1分钟左右时间编译) b. 编译完成后，选一个运行，比如 find_obj 程序。该文件夹下终端输入： ./ find_obj 嘻嘻，一两秒内有看到图片了吧 8. python与opencv的接口配置。ubuntu16.04自带python2.7和python3.5。在安装完Opencv后，我们安装Python-opencv，请在终端输入命令 ： sudo apt-get install python-opencv也可以安装python-numpy ： sudo apt-get install python-numpy终端输入： cd ~ 进入根目录。再输入python 回车键后，显示python的版本信息，最后输入import cv ,如果没有弹出任何信息，说明接口配置成功。 参考资料：【1】 https://blog.csdn.net/maxujian3893/article/details/64125988【2】 https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral p．s．相关问题。打开 vi 可以， 不过应该是乱码。直接运行吧比如说 你写了一个 c程序 helloworld.c你用命令gcc -o helloworld.o helloworld.c就会生成一个可执行的文件 helloworld.o用命令 ./helloworld.o就可以执行了（注意 点斜杠 是运行，有一点的） – 嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[face2ai社区成立啦！]]></title>
     <url>%2Fface2%E7%A4%BE%E5%8C%BA%E6%88%90%E7%AB%8B%E5%95%A6%2F</url>
     <content type="text"><![CDATA[图像处理方向，潜心研究吧！12345]]></content>
@@ -21,6 +10,17 @@
       <tags>
         <tag>face2ai</tag>
         <tag>人工智能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu16.04安装opencv2.4.13.6及配置环境]]></title>
+    <url>%2Fubuntu16.04%E5%AE%89%E8%A3%85opencv2.4.13.6byBruce%2F</url>
+    <content type="text"><![CDATA[Ubuntu16.04安装opencv2.4.13.6及配置环境1.准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip 2. （第一步）安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install build-essential则会显示以下内容正在读取软件包列表… 完成正在分析软件包的依赖关系树正在读取状态信息… 完成build-essential 已经是最新版 (12.1ubuntu2)。升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 198 个软件包未被升级。 3. （第二步）安装依赖包，主要参考了如下2个文档，都包含了必备的包。###（1） https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包） 下面依赖关系主要是为了能够支持读写图片以及视频sudo apt-get install libgtk2.0-dev libavcodec-dev libavformat-dev libtiff4-dev（独有，提示已经被废弃，bruce并未安装。在使用pyth Ubuntu下叫做python-dev，CentOS下叫做python-devel，标记一下。） libswscale-dev libjasper-dev安装cmake，请输入命令 sudo apt-get install cmake安装pkg-config。请输入命令： sudo apt-get install pkg-config 它是一个提供从源代码中编译软件时查询已安装的库时使用的统一接口的计算机软件。Ps.下图是查询Linux是否安装了某个包的方法 ###（2） https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral （较多安装包）安装依赖包sudo apt-get install cmake git libgtk2.0-dev（失败，难道16.04要换成3.0而不是2.0？） pkg-config libavcodec-dev libavformat-dev libswscale-dev安装可选包sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev 4. 源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！ a. 首先进入当前解压的源码包opencv所在目录opencv2.4.13.6 。使用的是cd命令或者是鼠标直接点击文件夹。 b. 创建一个新的文件夹。输入指令： mkdir release c. 进入该release文件夹。输入指令：cd release d. 编译。输入命令：（最后在local接着的是两个点，不要忘了，最后直接复制粘贴进命令行）会比较耗时，比如会花费20分钟来编译，会有进度显示哒。cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .. e. 开启线程(按照自己的配置,处理器核数*2)。输入命令： make -j4 f. sudo make install （这一步也很快）5. opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！ a. 在文件/etc/ld.so.conf中添加 /usr/local/lib (这里就是上文中您的安装目录下的) b. 当我们打开、/etc/ld.so.conf文件时，发现它的属性为只读，则终端上输入以下命令： sudo chmod 666 /etc/ld.so.conf 改变文件属性为允许所有用户对该文件进行读写操作然后另起一行输入/usr/local/lib了。 c. 完成动态库的共享。请输入 sudo ldconfig –v6. 接下来，配置opencv的头文件位置！ a. 输入命令： sudo gedit /etc/bash.bashrc 进入编辑页面。 b. 在编辑命令输入以下内容：PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig 并保存下来。 c. 终端输入命令：export PKG_CONFIG_PATH d. 使配置生效。终端输入命令:sudo source /etc/bash.bashrc 的 e. 由于source为root命令，需要root权限。输入命令：su bruce（bruce为我本人的用户名，请换成您自己的）然后按提示进行。 f． 再次使配置生效。终端输入命令： source /etc/bash.bashrc g．退出。终端输入命令：quit()或者直接键盘按住 Ctrl+D 这两个按键。 h. 更新database。终端输入命令： sudo updatedb 7. 选择一个demo进行测试。完工啦！！！哈哈，最后就可以来测试我们是否搞定这个opencv的配置啦 a. 在解压的opencv目录下找到 samples/c/文件夹。在该文件夹下输入终端指令： ./build_all.sh (这一步将会花费大概1分钟左右时间编译) b. 编译完成后，选一个运行，比如 find_obj 程序。该文件夹下终端输入： ./ find_obj 嘻嘻，一两秒内有看到图片了吧 8. python与opencv的接口配置。ubuntu16.04自带python2.7和python3.5。在安装完Opencv后，我们安装Python-opencv，请在终端输入命令 ： sudo apt-get install python-opencv也可以安装python-numpy ： sudo apt-get install python-numpy终端输入： cd ~ 进入根目录。再输入python 回车键后，显示python的版本信息，最后输入import cv ,如果没有弹出任何信息，说明接口配置成功。 参考资料：【1】 https://blog.csdn.net/maxujian3893/article/details/64125988【2】 https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral p．s．相关问题。打开 vi 可以， 不过应该是乱码。直接运行吧比如说 你写了一个 c程序 helloworld.c你用命令gcc -o helloworld.o helloworld.c就会生成一个可执行的文件 helloworld.o用命令 ./helloworld.o就可以执行了（注意 点斜杠 是运行，有一点的） – 嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -45,6 +45,18 @@
       <tags>
         <tag>node.js</tag>
         <tag>express</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS7下Tomcat启动慢的原因及解决方案]]></title>
+    <url>%2F%E6%9D%8E%E6%96%87%E5%AD%A6%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[title: 李文学的博客一date: 2018-10-12 22:02:10categories: 这是博客的分类tags: 这是博客的标签123321 Blog]]></content>
+      <categories>
+        <category>云服务器</category>
+      </categories>
+      <tags>
+        <tag>centOS</tag>
+        <tag>tomcat</tag>
       </tags>
   </entry>
 </search>
