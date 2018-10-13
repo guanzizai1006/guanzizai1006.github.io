@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[分类测试文章]]></title>
+    <url>%2F%E5%88%86%E7%B1%BB%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Testing</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[标签测试文章]]></title>
+    <url>%2F%E6%A0%87%E7%AD%BE%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>Testing</tag>
+        <tag>Another Tag</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[face2ai社区成立啦！]]></title>
     <url>%2Fface2%E7%A4%BE%E5%8C%BA%E6%88%90%E7%AB%8B%E5%95%A6%2F</url>
     <content type="text"><![CDATA[图像处理方向，潜心研究吧！12345]]></content>
@@ -38,7 +55,7 @@
   <entry>
     <title><![CDATA[写给小白的express学习笔记]]></title>
     <url>%2F%E6%B5%8B%E8%AF%95%2F</url>
-    <content type="text"><![CDATA[hhh yonglaiceshide ,,buguanwo xiede shishenm]]></content>
+    <content type="text"><![CDATA[这也是测试文档]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
