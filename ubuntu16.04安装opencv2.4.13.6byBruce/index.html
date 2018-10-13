@@ -106,18 +106,18 @@
 
 
 
-<meta name="description" content="Ubuntu16.04安装opencv2.4.13.6及配置环境准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip (第一步)安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install build-essentia">
+<meta name="description" content="categories: ubuntutags: [ubuntu，opencv，安装] 准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip (第一步)安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install bui">
 <meta name="keywords" content="ubuntu，opencv，安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu16.04安装opencv2.4.13.6及配置环境">
 <meta property="og:url" content="https://liwenxue.top/ubuntu16.04安装opencv2.4.13.6byBruce/index.html">
 <meta property="og:site_name" content="【Bruce】|备战马拉松">
-<meta property="og:description" content="Ubuntu16.04安装opencv2.4.13.6及配置环境准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip (第一步)安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install build-essentia">
+<meta property="og:description" content="categories: ubuntutags: [ubuntu，opencv，安装] 准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip (第一步)安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install bui">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-13T11:13:36.245Z">
+<meta property="og:updated_time" content="2018-10-13T11:25:34.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu16.04安装opencv2.4.13.6及配置环境">
-<meta name="twitter:description" content="Ubuntu16.04安装opencv2.4.13.6及配置环境准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip (第一步)安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install build-essentia">
+<meta name="twitter:description" content="categories: ubuntutags: [ubuntu，opencv，安装] 准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip (第一步)安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install bui">
 
 
 
@@ -333,11 +333,12 @@
       <div class="post-body">
         
         
-          <h1 id="Ubuntu16-04安装opencv2-4-13-6及配置环境"><a href="#Ubuntu16-04安装opencv2-4-13-6及配置环境" class="headerlink" title="Ubuntu16.04安装opencv2.4.13.6及配置环境"></a>Ubuntu16.04安装opencv2.4.13.6及配置环境</h1><h2 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h2><p>官网下载源码包，存到Linux下的“下载”，并解压。<br>bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip</p>
-<h2 id="第一步-安装编译工具。"><a href="#第一步-安装编译工具。" class="headerlink" title="(第一步)安装编译工具。"></a>(第一步)安装编译工具。</h2><p>bruce@bruce-virtual-machine:~$ sudo apt-get install build-essential<br>则会显示以下内容<br>正在读取软件包列表… 完成<br>正在分析软件包的依赖关系树<br>正在读取状态信息… 完成<br>build-essential 已经是最新版 (12.1ubuntu2)。<br>升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 198 个软件包未被升级。</p>
-<h2 id="第二步-安装依赖包，主要参考了如下2个文档，都包含了必备的包。"><a href="#第二步-安装依赖包，主要参考了如下2个文档，都包含了必备的包。" class="headerlink" title="(第二步)安装依赖包，主要参考了如下2个文档，都包含了必备的包。"></a>(第二步)安装依赖包，主要参考了如下2个文档，都包含了必备的包。</h2><h3 id="https-blog-csdn-net-maxujian3893-article-details-64125988（较少安装包）"><a href="#https-blog-csdn-net-maxujian3893-article-details-64125988（较少安装包）" class="headerlink" title="https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）"></a><a href="https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）" target="_blank" rel="noopener">https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）</a></h3><p>下面依赖关系主要是为了能够支持读写图片以及视频sudo apt-get install  libgtk2.0-dev libavcodec-dev libavformat-dev  libtiff4-dev（独有，提示已经被废弃，bruce并未安装。在使用pyth Ubuntu下叫做python-dev，CentOS下叫做python-devel，标记一下。）  libswscale-dev libjasper-dev<br>安装cmake，请输入命令 sudo apt-get install cmake<br>安装pkg-config。请输入命令： sudo apt-get install pkg-config  它是一个提供从源代码中编译软件时查询已安装的库时使用的统一接口的计算机软件。Ps.下图是查询Linux是否安装了某个包的方法</p>
-<h3 id="https-blog-csdn-net-u011557212-article-details-54706966-utm-source-itdadao-amp-utm-medium-referral-（较多安装包）"><a href="#https-blog-csdn-net-u011557212-article-details-54706966-utm-source-itdadao-amp-utm-medium-referral-（较多安装包）" class="headerlink" title="https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral （较多安装包）"></a><a href="https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral</a> （较多安装包）</h3><p>安装依赖包<br>sudo apt-get install cmake git libgtk2.0-dev（失败，难道16.04要换成3.0而不是2.0？） pkg-config libavcodec-dev libavformat-dev libswscale-dev<br>安装可选包<br>sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev</p>
-<h2 id="源码-编译工具安装-依赖包的安装-三者全部搞定之后，接下来就是要编译啦！"><a href="#源码-编译工具安装-依赖包的安装-三者全部搞定之后，接下来就是要编译啦！" class="headerlink" title="源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！"></a>源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！</h2><ul>
+          <p>categories: ubuntu<br>tags: [ubuntu，opencv，安装]</p>
+<h1 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h1><p>官网下载源码包，存到Linux下的“下载”，并解压。<br>bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip</p>
+<h1 id="第一步-安装编译工具。"><a href="#第一步-安装编译工具。" class="headerlink" title="(第一步)安装编译工具。"></a>(第一步)安装编译工具。</h1><p>bruce@bruce-virtual-machine:~$ sudo apt-get install build-essential<br>则会显示以下内容<br>正在读取软件包列表… 完成<br>正在分析软件包的依赖关系树<br>正在读取状态信息… 完成<br>build-essential 已经是最新版 (12.1ubuntu2)。<br>升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 198 个软件包未被升级。</p>
+<h1 id="第二步-安装依赖包，主要参考了如下2个文档，都包含了必备的包。"><a href="#第二步-安装依赖包，主要参考了如下2个文档，都包含了必备的包。" class="headerlink" title="(第二步)安装依赖包，主要参考了如下2个文档，都包含了必备的包。"></a>(第二步)安装依赖包，主要参考了如下2个文档，都包含了必备的包。</h1><h2 id="https-blog-csdn-net-maxujian3893-article-details-64125988（较少安装包）"><a href="#https-blog-csdn-net-maxujian3893-article-details-64125988（较少安装包）" class="headerlink" title="https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）"></a><a href="https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）" target="_blank" rel="noopener">https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）</a></h2><p>下面依赖关系主要是为了能够支持读写图片以及视频sudo apt-get install  libgtk2.0-dev libavcodec-dev libavformat-dev  libtiff4-dev（独有，提示已经被废弃，bruce并未安装。在使用pyth Ubuntu下叫做python-dev，CentOS下叫做python-devel，标记一下。）  libswscale-dev libjasper-dev<br>安装cmake，请输入命令 sudo apt-get install cmake<br>安装pkg-config。请输入命令： sudo apt-get install pkg-config  它是一个提供从源代码中编译软件时查询已安装的库时使用的统一接口的计算机软件。Ps.下图是查询Linux是否安装了某个包的方法</p>
+<h2 id="https-blog-csdn-net-u011557212-article-details-54706966-utm-source-itdadao-amp-utm-medium-referral-（较多安装包）"><a href="#https-blog-csdn-net-u011557212-article-details-54706966-utm-source-itdadao-amp-utm-medium-referral-（较多安装包）" class="headerlink" title="https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral （较多安装包）"></a><a href="https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral</a> （较多安装包）</h2><p>安装依赖包<br>sudo apt-get install cmake git libgtk2.0-dev（失败，难道16.04要换成3.0而不是2.0？） pkg-config libavcodec-dev libavformat-dev libswscale-dev<br>安装可选包<br>sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev</p>
+<h1 id="源码-编译工具安装-依赖包的安装-三者全部搞定之后，接下来就是要编译啦！"><a href="#源码-编译工具安装-依赖包的安装-三者全部搞定之后，接下来就是要编译啦！" class="headerlink" title="源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！"></a>源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！</h1><ul>
 <li>a.首先进入当前解压的源码包opencv所在目录opencv2.4.13.6  。使用的是cd命令或者是鼠标直接点击文件夹。</li>
 <li>b.创建一个新的文件夹。输入指令： mkdir release</li>
 <li>c.进入该release文件夹。输入指令：cd release</li>
@@ -345,10 +346,10 @@
 <li>e.开启线程(按照自己的配置,处理器核数*2)。输入命令： make -j4</li>
 <li>f.sudo make install （这一步也很快）</li>
 </ul>
-<h2 id="opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！"><a href="#opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！" class="headerlink" title="opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！"></a>opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！</h2><ul>
+<h1 id="opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！"><a href="#opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！" class="headerlink" title="opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！"></a>opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！</h1><ul>
 <li>a.在文件/etc/ld.so.conf中添加 /usr/local/lib (这里就是上文中您的安装目录下的)</li>
 <li>b.当我们打开、/etc/ld.so.conf文件时，发现它的属性为只读，则终端上输入以下命令： sudo chmod 666 /etc/ld.so.conf 改变文件属性为允许所有用户对该文件进行读写操作然后另起一行输入/usr/local/lib了。</li>
-<li>c.完成动态库的共享。请输入 sudo ldconfig –v<h2 id="接下来，配置opencv的头文件位置！"><a href="#接下来，配置opencv的头文件位置！" class="headerlink" title="接下来，配置opencv的头文件位置！"></a>接下来，配置opencv的头文件位置！</h2></li>
+<li>c.完成动态库的共享。请输入 sudo ldconfig –v<h1 id="接下来，配置opencv的头文件位置！"><a href="#接下来，配置opencv的头文件位置！" class="headerlink" title="接下来，配置opencv的头文件位置！"></a>接下来，配置opencv的头文件位置！</h1></li>
 <li>a.输入命令： sudo gedit /etc/bash.bashrc   进入编辑页面。</li>
 <li>b.在编辑命令输入以下内容：<br>PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig  并保存下来。</li>
 <li>c.终端输入命令：<br>export PKG_CONFIG_PATH</li>
@@ -358,12 +359,12 @@
 <li>g.退出。终端输入命令：quit()或者直接键盘按住 Ctrl+D 这两个按键。</li>
 <li>h.更新database。终端输入命令：  sudo updatedb   </li>
 </ul>
-<h2 id="选择一个demo进行测试。"><a href="#选择一个demo进行测试。" class="headerlink" title="选择一个demo进行测试。"></a>选择一个demo进行测试。</h2><p>完工啦！！！哈哈，最后就可以来测试我们是否搞定这个opencv的配置啦</p>
+<h1 id="选择一个demo进行测试。"><a href="#选择一个demo进行测试。" class="headerlink" title="选择一个demo进行测试。"></a>选择一个demo进行测试。</h1><p>完工啦！！！哈哈，最后就可以来测试我们是否搞定这个opencv的配置啦</p>
 <ul>
 <li>a.在解压的opencv目录下找到 samples/c/文件夹。在该文件夹下输入终端指令：   ./build_all.sh    (这一步将会花费大概1分钟左右时间编译)</li>
 <li>b.编译完成后，选一个运行，比如 find_obj 程序。<br>该文件夹下终端输入：  ./ find_obj    嘻嘻，一两秒内有看到图片了吧</li>
 </ul>
-<h2 id="python与opencv的接口配置。"><a href="#python与opencv的接口配置。" class="headerlink" title="python与opencv的接口配置。"></a>python与opencv的接口配置。</h2><p>ubuntu16.04自带python2.7和python3.5。在安装完Opencv后，我们安装Python-opencv，<br>请在终端输入命令 ： sudo apt-get install python-opencv<br>也可以安装python-numpy ： sudo apt-get install python-numpy<br>终端输入： cd ~ 进入根目录。<br>再输入python  回车键后，显示python的版本信息，<br>最后输入import cv  ,如果没有弹出任何信息，说明接口配置成功。</p>
+<h1 id="python与opencv的接口配置。"><a href="#python与opencv的接口配置。" class="headerlink" title="python与opencv的接口配置。"></a>python与opencv的接口配置。</h1><p>ubuntu16.04自带python2.7和python3.5。在安装完Opencv后，我们安装Python-opencv，<br>请在终端输入命令 ： sudo apt-get install python-opencv<br>也可以安装python-numpy ： sudo apt-get install python-numpy<br>终端输入： cd ~ 进入根目录。<br>再输入python  回车键后，显示python的版本信息，<br>最后输入import cv  ,如果没有弹出任何信息，说明接口配置成功。</p>
 <ul>
 <li><p>参考资料：<br>【1】    <a href="https://blog.csdn.net/maxujian3893/article/details/64125988" target="_blank" rel="noopener">https://blog.csdn.net/maxujian3893/article/details/64125988</a><br>【2】    <a href="https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral</a></p>
 </li>
@@ -371,7 +372,7 @@
 </li>
 </ul>
 <p>– </p>
-<h3 id="嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！"><a href="#嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！" class="headerlink" title="嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！"></a>嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！</h3>
+<h2 id="嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！"><a href="#嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！" class="headerlink" title="嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！"></a>嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！</h2>
         
       </div>
       
@@ -455,7 +456,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -466,7 +467,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -477,7 +478,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -555,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu16-04安装opencv2-4-13-6及配置环境"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu16.04安装opencv2.4.13.6及配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备阶段"><span class="nav-number">1.1.</span> <span class="nav-text">准备阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步-安装编译工具。"><span class="nav-number">1.2.</span> <span class="nav-text">(第一步)安装编译工具。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步-安装依赖包，主要参考了如下2个文档，都包含了必备的包。"><span class="nav-number">1.3.</span> <span class="nav-text">(第二步)安装依赖包，主要参考了如下2个文档，都包含了必备的包。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#https-blog-csdn-net-maxujian3893-article-details-64125988（较少安装包）"><span class="nav-number">1.3.1.</span> <span class="nav-text">https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https-blog-csdn-net-u011557212-article-details-54706966-utm-source-itdadao-amp-utm-medium-referral-（较多安装包）"><span class="nav-number">1.3.2.</span> <span class="nav-text">https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral （较多安装包）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码-编译工具安装-依赖包的安装-三者全部搞定之后，接下来就是要编译啦！"><span class="nav-number">1.4.</span> <span class="nav-text">源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！"><span class="nav-number">1.5.</span> <span class="nav-text">opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接下来，配置opencv的头文件位置！"><span class="nav-number">1.6.</span> <span class="nav-text">接下来，配置opencv的头文件位置！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择一个demo进行测试。"><span class="nav-number">1.7.</span> <span class="nav-text">选择一个demo进行测试。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python与opencv的接口配置。"><span class="nav-number">1.8.</span> <span class="nav-text">python与opencv的接口配置。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！"><span class="nav-number">1.8.1.</span> <span class="nav-text">嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备阶段"><span class="nav-number">1.</span> <span class="nav-text">准备阶段</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一步-安装编译工具。"><span class="nav-number">2.</span> <span class="nav-text">(第一步)安装编译工具。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二步-安装依赖包，主要参考了如下2个文档，都包含了必备的包。"><span class="nav-number">3.</span> <span class="nav-text">(第二步)安装依赖包，主要参考了如下2个文档，都包含了必备的包。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#https-blog-csdn-net-maxujian3893-article-details-64125988（较少安装包）"><span class="nav-number">3.1.</span> <span class="nav-text">https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-blog-csdn-net-u011557212-article-details-54706966-utm-source-itdadao-amp-utm-medium-referral-（较多安装包）"><span class="nav-number">3.2.</span> <span class="nav-text">https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral （较多安装包）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码-编译工具安装-依赖包的安装-三者全部搞定之后，接下来就是要编译啦！"><span class="nav-number">4.</span> <span class="nav-text">源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！"><span class="nav-number">5.</span> <span class="nav-text">opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接下来，配置opencv的头文件位置！"><span class="nav-number">6.</span> <span class="nav-text">接下来，配置opencv的头文件位置！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择一个demo进行测试。"><span class="nav-number">7.</span> <span class="nav-text">选择一个demo进行测试。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python与opencv的接口配置。"><span class="nav-number">8.</span> <span class="nav-text">python与opencv的接口配置。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！"><span class="nav-number">8.1.</span> <span class="nav-text">嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -575,7 +576,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
@@ -603,26 +604,6 @@
 
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
 
 
 
