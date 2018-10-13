@@ -1,49 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[分类测试文章]]></title>
-    <url>%2F%E5%88%86%E7%B1%BB%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Testing</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[标签测试文章]]></title>
-    <url>%2F%E6%A0%87%E7%AD%BE%2F</url>
-    <content type="text"></content>
-      <tags>
-        <tag>Testing</tag>
-        <tag>Another Tag</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[face2ai社区成立啦！]]></title>
-    <url>%2Fface2%E7%A4%BE%E5%8C%BA%E6%88%90%E7%AB%8B%E5%95%A6%2F</url>
-    <content type="text"><![CDATA[图像处理方向，潜心研究吧！12345]]></content>
-      <categories>
-        <category>人工智能</category>
-      </categories>
-      <tags>
-        <tag>face2ai</tag>
-        <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Ubuntu16.04安装opencv2.4.13.6及配置环境]]></title>
-    <url>%2Fubuntu16.04%E5%AE%89%E8%A3%85opencv2.4.13.6byBruce%2F</url>
-    <content type="text"><![CDATA[Ubuntu16.04安装opencv2.4.13.6及配置环境1.准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip 2. （第一步）安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install build-essential则会显示以下内容正在读取软件包列表… 完成正在分析软件包的依赖关系树正在读取状态信息… 完成build-essential 已经是最新版 (12.1ubuntu2)。升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 198 个软件包未被升级。 3. （第二步）安装依赖包，主要参考了如下2个文档，都包含了必备的包。###（1） https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包） 下面依赖关系主要是为了能够支持读写图片以及视频sudo apt-get install libgtk2.0-dev libavcodec-dev libavformat-dev libtiff4-dev（独有，提示已经被废弃，bruce并未安装。在使用pyth Ubuntu下叫做python-dev，CentOS下叫做python-devel，标记一下。） libswscale-dev libjasper-dev安装cmake，请输入命令 sudo apt-get install cmake安装pkg-config。请输入命令： sudo apt-get install pkg-config 它是一个提供从源代码中编译软件时查询已安装的库时使用的统一接口的计算机软件。Ps.下图是查询Linux是否安装了某个包的方法 ###（2） https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral （较多安装包）安装依赖包sudo apt-get install cmake git libgtk2.0-dev（失败，难道16.04要换成3.0而不是2.0？） pkg-config libavcodec-dev libavformat-dev libswscale-dev安装可选包sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev 4. 源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！ a. 首先进入当前解压的源码包opencv所在目录opencv2.4.13.6 。使用的是cd命令或者是鼠标直接点击文件夹。 b. 创建一个新的文件夹。输入指令： mkdir release c. 进入该release文件夹。输入指令：cd release d. 编译。输入命令：（最后在local接着的是两个点，不要忘了，最后直接复制粘贴进命令行）会比较耗时，比如会花费20分钟来编译，会有进度显示哒。cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .. e. 开启线程(按照自己的配置,处理器核数*2)。输入命令： make -j4 f. sudo make install （这一步也很快）5. opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！ a. 在文件/etc/ld.so.conf中添加 /usr/local/lib (这里就是上文中您的安装目录下的) b. 当我们打开、/etc/ld.so.conf文件时，发现它的属性为只读，则终端上输入以下命令： sudo chmod 666 /etc/ld.so.conf 改变文件属性为允许所有用户对该文件进行读写操作然后另起一行输入/usr/local/lib了。 c. 完成动态库的共享。请输入 sudo ldconfig –v6. 接下来，配置opencv的头文件位置！ a. 输入命令： sudo gedit /etc/bash.bashrc 进入编辑页面。 b. 在编辑命令输入以下内容：PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig 并保存下来。 c. 终端输入命令：export PKG_CONFIG_PATH d. 使配置生效。终端输入命令:sudo source /etc/bash.bashrc 的 e. 由于source为root命令，需要root权限。输入命令：su bruce（bruce为我本人的用户名，请换成您自己的）然后按提示进行。 f． 再次使配置生效。终端输入命令： source /etc/bash.bashrc g．退出。终端输入命令：quit()或者直接键盘按住 Ctrl+D 这两个按键。 h. 更新database。终端输入命令： sudo updatedb 7. 选择一个demo进行测试。完工啦！！！哈哈，最后就可以来测试我们是否搞定这个opencv的配置啦 a. 在解压的opencv目录下找到 samples/c/文件夹。在该文件夹下输入终端指令： ./build_all.sh (这一步将会花费大概1分钟左右时间编译) b. 编译完成后，选一个运行，比如 find_obj 程序。该文件夹下终端输入： ./ find_obj 嘻嘻，一两秒内有看到图片了吧 8. python与opencv的接口配置。ubuntu16.04自带python2.7和python3.5。在安装完Opencv后，我们安装Python-opencv，请在终端输入命令 ： sudo apt-get install python-opencv也可以安装python-numpy ： sudo apt-get install python-numpy终端输入： cd ~ 进入根目录。再输入python 回车键后，显示python的版本信息，最后输入import cv ,如果没有弹出任何信息，说明接口配置成功。 参考资料：【1】 https://blog.csdn.net/maxujian3893/article/details/64125988【2】 https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral p．s．相关问题。打开 vi 可以， 不过应该是乱码。直接运行吧比如说 你写了一个 c程序 helloworld.c你用命令gcc -o helloworld.o helloworld.c就会生成一个可执行的文件 helloworld.o用命令 ./helloworld.o就可以执行了（注意 点斜杠 是运行，有一点的） – 嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Git 和 GitHub 的使用方法汇总]]></title>
     <url>%2FGit%E5%92%8CGitHub%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB%2F</url>
-    <content type="text"><![CDATA[#源文件：三、Linux相关-&gt; Git 和 GitHub 的使用方法汇总 参考链接如下 1. 我们需要使用git在本地创建一个相同的项目。&lt;pre&gt; $ makdir ~/hello-world //创建一个项目hello-world $ cd ~/hello-world //打开这个项目 $ git init //初始化 $ touch README $ git add README //更新README文件 $ git commit -m &apos;first commit&apos;//提交更新，并注释信息“first commit” $ git remote add origin git@github.com:defnngj/hello-world.git //连接远程github项目 $ git push -u origin master //将本地项目更新到github项目上去 &lt;/pre&gt; 源文档 &lt;https://www.cnblogs.com/fnng/archive/2011/08/25/2153807.html&gt; 2. Git的诞生Linus Torvalds在1991年创建了开源系统Linux，在2002年以前，世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后由Linus本人通过手工方式合并代码！然后，Linux系统已经发展了十年了，代码库之大让Linus很难继续通过手工方式管理了。 源文档 &lt;http://www.testclass.net/git/git-github-start/&gt; 3. 更改readme文件！！！第一步尝试失败： &lt;pre&gt; Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master) $ vim README Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master) $ git push -u origin master Everything up-to-date Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;origin&apos;. &lt;/pre&gt; 单独更改了其中的README文件后，直接执行“git push -u origin master”语句，其并不能同步到GitHub网站上去。 Note: 在第一次远程链接某项目时，这一句，必不可少！1$ git remote add origin git@github.com:guanzizai1006/bruce_demo_pack.git 第二次尝试成功： Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master) $ git commit -m “用git commit -m 提交更新” [master bffe44a] “用git commit -m 提交更新 1 file changed, 11 insertions(+) 使用此命令， &lt;pre&gt; $ git commit -m &quot;用git commit -m 提交更新&quot; //双引号内是添加的评论内容,成功提交更新，下一步是要push上去！ $ git push -u origin master Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master) $ git push -u origin master Counting objects: 3, done. Delta compression using up to 4 threads. Compressing objects: 100% (2/2), done. Writing objects: 100% (3/3), 660 bytes | 660.00 KiB/s, done. Total 3 (delta 0), reused 0 (delta 0) To github.com:guanzizai1006/bruce_demo_pack.git 13cf1ed..bffe44a master -&gt; master Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;origin&apos;. &lt;/pre&gt; 4. 当本地项目中，新添加了一个 py 文件后，要上传到云端。 $ git add one.py //更新README文件 $ git commit -m 'add the file named one.py' //提交更新，并注释信息“first commit，用以说明本次更新的是啥” 源文档 【当然，这时候可以考虑，要不要远程连接github项目。 $ git remote add origin git@github.com:guanzizai1006/bruce_demo_pack.git 】 $ git push -u origin master //将本地项目更新到github项目上去 5. 克隆到本地。（前期准备阶段）首先，下载安装Git。 其次，通过Git生成本地公钥，并且将公钥添加到GitHub中。 最后，设置仓库人员的用户名和邮箱地址。 用 git clone 命令，克隆到目标路径。（ssh 方式） 或者 （http 方式） 1$ git clone https://github.com/defnngj/project-name “git add” 命令对当前目录下的文件添加跟踪。这个命令后面 加一个 点 . 则意味着路径下的所有文件“git commit” 命令将添加文件提交到本地仓库。“git push” 将本地项目提交到远程仓库GitHub。除第一次下载项目需要通过 “git clone” 将项目克隆到本地外,后续再使用 “git pull” 命令时会直接将更新拉取到本地 $ git pull origin master 源文档 ## 6.命令行，windows进入别的盘符 Bruce Lee@Bruce MINGW64 ~ $ cd /d Git的入门学习和使用。 ————————Linux下安装git 并下载码云仓库—————————————— bruce@bruce-virtual-machine:~$ sudo apt-get install git [sudo] bruce 的密码： 正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 git 已经是最新版 (1:2.7.4-0ubuntu1.4)。 升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 83 个软件包未被升级。 新建本地文件夹 bruce@bruce-virtual-machine:~/桌面$ mkdir face_fatigue_detection 克隆到本地 bruce@bruce-virtual-machine:~/桌面/face_fatigue_detection$ git clone https://gitee.com/thc1234/face_fatigue_detection.git 正克隆到 'face_fatigue_detection'... Username for 'https://gitee.com': guanzizai1006 Password for 'https://Bruce@gitee.com': 克隆完成啦 bruce@bruce-virtual-machine:~/桌面/face_fatigue_detection$ git clone https://gitee.com/thc1234/face_fatigue_detection.git 正克隆到 'face_fatigue_detection'... Username for 'https://gitee.com': guanzizai1006 Password for 'https://guanzizai1006@gitee.com': remote: Enumerating objects: 405, done. remote: Counting objects: 100% (405/405), done. remote: Compressing objects: 100% (398/398), done. remote: Total 405 (delta 196), reused 0 (delta 0) 接收对象中: 100% (405/405), 113.33 MiB | 1.23 MiB/s, 完成. 处理 delta 中: 100% (196/196), 完成. ———————— Git配置 gitee码云———————————————————— 由本地文件夹更新到云端的话，则只要命令行 ./push.sh 则可以完成了。 由云端更新到本地，只需要在本地目录下，执行 git pull 就OK了。 ———————————————————————————————————— 7. 查看当前路径的“完整路径” 8. 新建本地文件夹后，克隆云端内容到本地目录 9. 运行sh文件， 10. sh 文件内容如下： #!/bin/bash git add ./* git commit -m "shell" git push 截图如下]]></content>
+    <content type="text"><![CDATA[参考链接如下 我们需要使用git在本地创建一个相同的项目。&lt;pre&gt; $ makdir ~/hello-world //创建一个项目hello-world $ cd ~/hello-world //打开这个项目 $ git init //初始化 $ touch README $ git add README //更新README文件 $ git commit -m &apos;first commit&apos;//提交更新，并注释信息“first commit” $ git remote add origin git@github.com:defnngj/hello-world.git //连接远程github项目 $ git push -u origin master //将本地项目更新到github项目上去 &lt;/pre&gt; 源文档 &lt;https://www.cnblogs.com/fnng/archive/2011/08/25/2153807.html&gt; Git的诞生Linus Torvalds在1991年创建了开源系统Linux，在2002年以前，世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后由Linus本人通过手工方式合并代码！然后，Linux系统已经发展了十年了，代码库之大让Linus很难继续通过手工方式管理了。 源文档 &lt;http://www.testclass.net/git/git-github-start/&gt; 更改readme文件！！！第一步尝试失败： &lt;pre&gt; Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master) $ vim README Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master) $ git push -u origin master Everything up-to-date Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;origin&apos;. &lt;/pre&gt; 单独更改了其中的README文件后，直接执行“git push -u origin master”语句，其并不能同步到GitHub网站上去。 Note: 在第一次远程链接某项目时，这一句，必不可少！1$ git remote add origin git@github.com:guanzizai1006/bruce_demo_pack.git 第二次尝试成功： Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master) $ git commit -m “用git commit -m 提交更新” [master bffe44a] “用git commit -m 提交更新 1 file changed, 11 insertions(+) 使用此命令， &lt;pre&gt; $ git commit -m &quot;用git commit -m 提交更新&quot; //双引号内是添加的评论内容,成功提交更新，下一步是要push上去！ $ git push -u origin master Bruce Lee@Bruce MINGW64 ~/bruce_demo_pack (master) $ git push -u origin master Counting objects: 3, done. Delta compression using up to 4 threads. Compressing objects: 100% (2/2), done. Writing objects: 100% (3/3), 660 bytes | 660.00 KiB/s, done. Total 3 (delta 0), reused 0 (delta 0) To github.com:guanzizai1006/bruce_demo_pack.git 13cf1ed..bffe44a master -&gt; master Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;origin&apos;. &lt;/pre&gt; 当本地项目中，新添加了一个 py 文件后，要上传到云端。 $ git add one.py //更新README文件 $ git commit -m 'add the file named one.py' //提交更新，并注释信息“first commit，用以说明本次更新的是啥” 源文档 【当然，这时候可以考虑，要不要远程连接github项目。 $ git remote add origin git@github.com:guanzizai1006/bruce_demo_pack.git 】 $ git push -u origin master //将本地项目更新到github项目上去 克隆到本地。（前期准备阶段）首先，下载安装Git。 其次，通过Git生成本地公钥，并且将公钥添加到GitHub中。 最后，设置仓库人员的用户名和邮箱地址。 用 git clone 命令，克隆到目标路径。（ssh 方式） 或者 （http 方式） 1$ git clone https://github.com/defnngj/project-name “git add” 命令对当前目录下的文件添加跟踪。这个命令后面 加一个 点 . 则意味着路径下的所有文件“git commit” 命令将添加文件提交到本地仓库。“git push” 将本地项目提交到远程仓库GitHub。除第一次下载项目需要通过 “git clone” 将项目克隆到本地外,后续再使用 “git pull” 命令时会直接将更新拉取到本地 $ git pull origin master 源文档 ## 命令行，windows进入别的盘符 Bruce Lee@Bruce MINGW64 ~ $ cd /d Git的入门学习和使用。 ————————Linux下安装git 并下载码云仓库—————————————— bruce@bruce-virtual-machine:~$ sudo apt-get install git [sudo] bruce 的密码： 正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 git 已经是最新版 (1:2.7.4-0ubuntu1.4)。 升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 83 个软件包未被升级。 新建本地文件夹 bruce@bruce-virtual-machine:~/桌面$ mkdir face_fatigue_detection 克隆到本地 bruce@bruce-virtual-machine:~/桌面/face_fatigue_detection$ git clone https://gitee.com/thc1234/face_fatigue_detection.git 正克隆到 'face_fatigue_detection'... Username for 'https://gitee.com': guanzizai1006 Password for 'https://Bruce@gitee.com': 克隆完成啦 bruce@bruce-virtual-machine:~/桌面/face_fatigue_detection$ git clone https://gitee.com/thc1234/face_fatigue_detection.git 正克隆到 'face_fatigue_detection'... Username for 'https://gitee.com': guanzizai1006 Password for 'https://guanzizai1006@gitee.com': remote: Enumerating objects: 405, done. remote: Counting objects: 100% (405/405), done. remote: Compressing objects: 100% (398/398), done. remote: Total 405 (delta 196), reused 0 (delta 0) 接收对象中: 100% (405/405), 113.33 MiB | 1.23 MiB/s, 完成. 处理 delta 中: 100% (196/196), 完成. ———————— Git配置 gitee码云———————————————————— 由本地文件夹更新到云端的话，则只要命令行 ./push.sh 则可以完成了。 由云端更新到本地，只需要在本地目录下，执行 git pull 就OK了。 ———————————————————————————————————— 查看当前路径的“完整路径” 新建本地文件夹后，克隆云端内容到本地目录 运行sh文件， sh 文件内容如下： #!/bin/bash git add ./* git commit -m "shell" git push 截图如下]]></content>
       <categories>
         <category>Git</category>
       </categories>
@@ -53,35 +13,26 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[写给小白的express学习笔记]]></title>
-    <url>%2F%E6%B5%8B%E8%AF%95%2F</url>
-    <content type="text"><![CDATA[这也是测试文档]]></content>
+    <title><![CDATA[Ubuntu16.04安装opencv2.4.13.6及配置环境]]></title>
+    <url>%2Fubuntu16.04%E5%AE%89%E8%A3%85opencv2.4.13.6byBruce%2F</url>
+    <content type="text"><![CDATA[Ubuntu16.04安装opencv2.4.13.6及配置环境准备阶段官网下载源码包，存到Linux下的“下载”，并解压。bruce@bruce-virtual-machine:~/下载$ unzip opencv-2.4.13.6.zip (第一步)安装编译工具。bruce@bruce-virtual-machine:~$ sudo apt-get install build-essential则会显示以下内容正在读取软件包列表… 完成正在分析软件包的依赖关系树正在读取状态信息… 完成build-essential 已经是最新版 (12.1ubuntu2)。升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 198 个软件包未被升级。 (第二步)安装依赖包，主要参考了如下2个文档，都包含了必备的包。https://blog.csdn.net/maxujian3893/article/details/64125988（较少安装包）下面依赖关系主要是为了能够支持读写图片以及视频sudo apt-get install libgtk2.0-dev libavcodec-dev libavformat-dev libtiff4-dev（独有，提示已经被废弃，bruce并未安装。在使用pyth Ubuntu下叫做python-dev，CentOS下叫做python-devel，标记一下。） libswscale-dev libjasper-dev安装cmake，请输入命令 sudo apt-get install cmake安装pkg-config。请输入命令： sudo apt-get install pkg-config 它是一个提供从源代码中编译软件时查询已安装的库时使用的统一接口的计算机软件。Ps.下图是查询Linux是否安装了某个包的方法 https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral （较多安装包）安装依赖包sudo apt-get install cmake git libgtk2.0-dev（失败，难道16.04要换成3.0而不是2.0？） pkg-config libavcodec-dev libavformat-dev libswscale-dev安装可选包sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev 源码+编译工具安装+依赖包的安装 三者全部搞定之后，接下来就是要编译啦！ a.首先进入当前解压的源码包opencv所在目录opencv2.4.13.6 。使用的是cd命令或者是鼠标直接点击文件夹。 b.创建一个新的文件夹。输入指令： mkdir release c.进入该release文件夹。输入指令：cd release d.编译。输入命令：（最后在local接着的是两个点，不要忘了，最后直接复制粘贴进命令行）会比较耗时，比如会花费20分钟来编译，会有进度显示哒。cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .. e.开启线程(按照自己的配置,处理器核数*2)。输入命令： make -j4 f.sudo make install （这一步也很快） opencv大致安装完毕，但还没结束哦。接下来就是要配置环境啦！不然还是没法用opencv的哦！ a.在文件/etc/ld.so.conf中添加 /usr/local/lib (这里就是上文中您的安装目录下的) b.当我们打开、/etc/ld.so.conf文件时，发现它的属性为只读，则终端上输入以下命令： sudo chmod 666 /etc/ld.so.conf 改变文件属性为允许所有用户对该文件进行读写操作然后另起一行输入/usr/local/lib了。 c.完成动态库的共享。请输入 sudo ldconfig –v接下来，配置opencv的头文件位置！ a.输入命令： sudo gedit /etc/bash.bashrc 进入编辑页面。 b.在编辑命令输入以下内容：PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig 并保存下来。 c.终端输入命令：export PKG_CONFIG_PATH d.使配置生效。终端输入命令:sudo source /etc/bash.bashrc 的 e.由于source为root命令，需要root权限。输入命令：su bruce（bruce为我本人的用户名，请换成您自己的）然后按提示进行。 f.再次使配置生效。终端输入命令： source /etc/bash.bashrc g.退出。终端输入命令：quit()或者直接键盘按住 Ctrl+D 这两个按键。 h.更新database。终端输入命令： sudo updatedb 选择一个demo进行测试。完工啦！！！哈哈，最后就可以来测试我们是否搞定这个opencv的配置啦 a.在解压的opencv目录下找到 samples/c/文件夹。在该文件夹下输入终端指令： ./build_all.sh (这一步将会花费大概1分钟左右时间编译) b.编译完成后，选一个运行，比如 find_obj 程序。该文件夹下终端输入： ./ find_obj 嘻嘻，一两秒内有看到图片了吧 python与opencv的接口配置。ubuntu16.04自带python2.7和python3.5。在安装完Opencv后，我们安装Python-opencv，请在终端输入命令 ： sudo apt-get install python-opencv也可以安装python-numpy ： sudo apt-get install python-numpy终端输入： cd ~ 进入根目录。再输入python 回车键后，显示python的版本信息，最后输入import cv ,如果没有弹出任何信息，说明接口配置成功。 参考资料：【1】 https://blog.csdn.net/maxujian3893/article/details/64125988【2】 https://blog.csdn.net/u011557212/article/details/54706966?utm_source=itdadao&amp;utm_medium=referral p.s. 相关问题。打开 vi 可以，不过应该是乱码。直接运行吧比如说 你写了一个 c程序 helloworld.c你用命令gcc -o helloworld.o helloworld.c就会生成一个可执行的文件 helloworld.o用命令 ./helloworld.o就可以执行了（注意 点斜杠 是运行，有一点的） – 嘿嘿，偷懒了，部分步骤图我还没有添加上来，等过几天闲下来了再加上来！！]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>ubuntu</category>
       </categories>
       <tags>
-        <tag>node.js</tag>
-        <tag>express</tag>
+        <tag>ubuntu，opencv，安装</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[这是标题-CentOS7下Tomcat启动慢的原因及解决方案]]></title>
-    <url>%2F%E6%9D%8E%E6%96%87%E5%AD%A6%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%80%2F</url>
-    <content type="text"><![CDATA[李文学的博客一123321 Blog]]></content>
+    <title><![CDATA[face2ai社区成立啦！]]></title>
+    <url>%2Fface2%E7%A4%BE%E5%8C%BA%E6%88%90%E7%AB%8B%E5%95%A6%2F</url>
+    <content type="text"><![CDATA[欢迎各位！共同成长进步！ 人工智能基础links：https://www.face2ai.com/欢迎来访！]]></content>
       <categories>
-        <category>云服务器</category>
+        <category>人工智能平台</category>
       </categories>
       <tags>
-        <tag>centOS</tag>
-        <tag>tomcat</tag>
+        <tag>社区平台建设</tag>
+        <tag>人工智能</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【30天自制操作系统】 Mac环境搭建]]></title>
-    <url>%2F%E3%80%8A30%E5%A4%A9%E8%87%AA%E5%88%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--Mac%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
-    <content type="text"><![CDATA[Abstract: Mac 下 《30天自制操作系统》环境Keywords: 《30天自制操作系统》，Macbook，环境 弄了三天了，终于弄好了，先说结果，就是作者在网站上放了os x的工具（hrb.osask.jp，也有linux下的工具，可以自己去下载），也就是说我白忙活了三天。。。再说一下这几天都干啥了，主要是想把c语言和nasm汇编连在一起。这个很多人都做过，但在网上现有的资料很少有在os X上做的的，也或者做了大家都没人说。。。。先贴代码：12345678910extern void swap(int *,int *);void main()&#123; int a=1; int b=2; swap(&amp;a,&amp;b); while(a==2) ;&#125; 这是c代码，调用swap交换两个值，为了不调用标准库，我没写显示函数，而是用了一个死循环代替，如果程序停住了，说明运行成功，再贴下汇编，这是我第一次写汇编哦。。啦啦啦啦啦12345678910GLOBAL _swap[section .text]_swap: mov EDX,[ESP+4] mov EAX,[ESP+8] mov EBX,[EDX] mov ECX,[EAX] mov [EDX],ECX mov [EAX],EBX ret 代码很简单，但是和书上格式有些不同，作者说的他用的是nask是他自己改版的nasm所以有些关键字用不了。。。 然后是编译成obj文件，这个很纠结，一开始不会用gcc编译出32位obj后来发现要加：1\-m32 就可以了。 编译过程如下图： 整个编译连接过程，最后光标停止，说明函数执行成功，如果nasm中写了什么中断或者什么其他系统不允许的可能会有总线错误（bus error）或者段错误（详情可以去看《c专家编程》，有相关说明）。值得注意的是nasm -f 的参数：1234567891011121314151617181920212223valid output formats for -f are (\`\*&apos; denotes default): \* bin flat-form binary files (e.g. DOS .COM, .SYS) aout Linux a.out object files aoutb NetBSD/FreeBSD a.out object files coff COFF (i386) object files (e.g. DJGPP for DOS) elf ELF32 (i386) object files (e.g. Linux) as86 Linux as86 (bin86 version 0.3) object files obj MS-DOS 16-bit/32-bit OMF object files win32 Microsoft Win32 (i386) object files rdf Relocatable Dynamic Object File Format v2.0 ieee IEEE-695 (LADsoft variant) object file format macho NeXTstep/OpenStep/Rhapsody/Darwin/MacOS X object files 这个参数纠结了好久，最后还是看帮助搞定的，因为linux下都是elf，但是os x用elf参数最后ld会报错，说找不到xxx函数定义。。ld的相关问题： 1231：ld: symbol(s) not found for inferred architecture i3862：ld: symbol(s) not found for inferred architecture x86\_643：ld: warning: ignoring file xxxx.o, file was built for unsupported file format 1，2和3的问题原因都是-f参数选的不对，或者gcc编译出来的是64位obj，nasm只能编译出来32或者16位目标代码。 如果和系统可运行程序不对应，ld不会给你链接的哦。。最后是objcopy，这个是GNU 的binutils的工具包的一部分。作用是操作二进制文件，可以任意改格式，具体参考说明，吧之前链接好的用objcopy 生成纯二进制文件后，和作者的比较发现，不一样，运行时qemu卡死，得到结论就是这两天又白忙活了。。。还好算是找到了工具，也有源代码，值得好好学习。]]></content>
-      <categories>
-        <category>30天自制操作系统</category>
-      </categories>
   </entry>
 </search>
